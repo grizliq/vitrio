@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://prilavok.ru/sitemap.xml
+Sitemap: https://vitrio.website/sitemap.xml
