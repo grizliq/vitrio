@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- крупные пятна, чтобы фон не был плоской заливкой -->
+    <filter id="mottle" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.0055" numOctaves="5" seed="3"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.09
+        0 0 0 0 0.13
+        0 0 0 0 0.08
+        0 0 0 0.85 -0.20"/>
+    </filter>
+    <filter id="mottle2" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.017" numOctaves="4" seed="17"/>
+      <feColorMatrix type="matrix" values="
+        0 0 0 0 0.05
+        0 0 0 0 0.07
+        0 0 0 0 0.04
+        0 0 0 0.45 -0.14"/>
+    </filter>
+    <radialGradient id="glowA" cx="76%" cy="12%" r="60%">
+      <stop offset="0" stop-color="#b5f42d" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#b5f42d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="8%" cy="82%" r="58%">
+      <stop offset="0" stop-color="#78a713" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#78a713" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#080a08"/>
+  <rect width="1600" height="1000" filter="url(#mottle)"/>
+  <rect width="1600" height="1000" filter="url(#mottle2)"/>
+  <rect width="1600" height="1000" fill="url(#glowA)"/>
+  <rect width="1600" height="1000" fill="url(#glowB)"/>
+</svg>

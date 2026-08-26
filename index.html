@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080a08">
+<title>Нейросеть для карточек товара — создать карточку товара для ВБ и Озон | Vitrio</title>
+<meta name="description" content="Нейросеть для создания карточек товара: загрузите фото — и получите фон, сцену и инфографику для ВБ, Озон и Яндекс Маркета. Как создать карточку товара без фотосессии. 3 дня за 1 ₽, дальше от 300 ₽ в неделю.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://prilavok.ru/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://prilavok.ru/">
+<meta property="og:site_name" content="Прилавок">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Нейросеть для карточек товара — для ВБ, Озон и Яндекс Маркета">
+<meta property="og:description" content="Загрузите фото — нейросеть соберёт фон, сцену и инфографику. Как создать карточку товара без фотосессии.">
+<meta property="og:image" content="https://prilavok.ru/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="style.css?v=538e9fac">
+<script src="app.js?v=578bf423" defer></script>
+</head>
+<body>
+
+<!-- ============================ ШАПКА ============================ -->
+<header class="nav">
+  <div class="nav__bar">
+    <a class="logo" href="#top" aria-label="Vitrio — на главную">
+      <span class="logo__img"><img src="img/logo.webp" alt="Vitrio" width="260" height="77"><img src="img/logo.webp" alt="" aria-hidden="true" width="260" height="77"></span>
+    </a>
+
+    <nav class="nav__links" aria-label="Основная навигация">
+      <a href="#why">Почему Vitrio</a>
+      <a href="#tutorial">Туториал</a>
+      <a href="#feat">Возможности</a>
+      <a href="#plans">Тарифы</a>
+    </nav>
+
+    <a class="btn btn--lime btn--sm nav__cta" data-cta href="https://vitrio.space/?ref=NF-367251-6731&amp;referral_offer=hybrid" target="_blank" rel="sponsored noopener">Попробуй за 1 ₽</a>
+  </div>
+  <p class="nav__caption">Vitrio (Витрио) — ИИ-студия товарного контента</p>
+</header>
+
+<main id="top">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero">
+    <div class="shell hero__grid">
+      <div class="hero__copy">
+        <h1><span class="lime">Нейросеть</span> для карточек товара</h1>
+        <p class="hero__lead">
+          Создать карточку товара для ВБ, Озон или Яндекс Маркета можно без фотосессии:
+          загрузите фото — нейросеть соберёт фон, сцену и инфографику.
+          Наш сервис работает безупречно и в этом убедились уже множество человек,
+          <a data-cta href="https://vitrio.space/?ref=NF-367251-6731&amp;referral_offer=hybrid" target="_blank" rel="sponsored noopener">попробуй</a> и ты.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--lime" data-cta href="https://vitrio.space/?ref=NF-367251-6731&amp;referral_offer=hybrid" target="_blank" rel="sponsored noopener">Попробуй 3 дня за 1 ₽</a>
+          <a class="btn btn--ghost" href="#tutorial">Смотреть туториал</a>
+        </div>
+      </div>
+
+      <div class="hero__media">
+        <span class="tag">Попробуйте прямо здесь:</span>
+
+        <!-- Демо: показан исходник; по кнопке он растворяется в свете и
+             из свечения проступает результат. Только прозрачность, размытие
+             и яркость — никаких перемещений. Прогон 1.8 с, возврат 0.7 с,
+             задаётся в style.css. Кнопка внутри рамки, снизу. -->
+        <div class="gen" id="heroGen">
+          <div class="gen__tilt">
+            <div class="gen__frame">
+              <!-- порядок важен: исходник лежит ниже, результат выше.
+                   Обрезка кругом идёт по верхнему слою, иначе её не видно. -->
+              <figure class="gen__layer gen__layer--src">
+                <img src="img/hero-1-photo.webp" alt="Исходное фото плюшевого медведя, снятое на телефон" width="940" height="940" fetchpriority="high">
+                <figcaption class="gen__label gen__label--src">Ваше фото</figcaption>
+              </figure>
+
+              <figure class="gen__layer gen__layer--done">
+                <img src="img/hero-2-card.jpg" alt="Готовая карточка товара: плюшевый медведь 25 см с инфографикой" width="940" height="940" decoding="async" fetchpriority="high">
+                <figcaption class="gen__label gen__label--done">
+                  <svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="#11170a" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5l4 4 8-9"/></svg>
+                  Готовая карточка
+                </figcaption>
+              </figure>
+              <span class="gen__bloom" aria-hidden="true"></span>
+
+              <div class="gen__steps" aria-hidden="true">
+                <span class="gen__chip">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#b5f42d" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>
+                  Фон убран
+                </span>
+                <span class="gen__chip">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#b5f42d" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>
+                  Сцена собрана
+                </span>
+                <span class="gen__chip">
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="#b5f42d" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5l4 4 8-9"/></svg>
+                  Инфографика готова
+                </span>
+              </div>
+
+              <button class="btn btn--lime gen__run" type="button">Сделать карточку товара</button>
+            </div>
+          </div>
+        </div>
+
+        <span class="tag">Карточка товара / премиум фото / маркетплейс</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= МАРКЕТПЛЕЙСЫ ======================= -->
+  <section class="mp">
+    <div class="shell">
+      <p class="mp__label">Форматы под площадки</p>
+      <div class="mp__row">
+        <img src="https://vitrio.space/assets/vitrio/marketplaces/wildberries.webp" alt="Wildberries" width="280" height="37" loading="lazy">
+        <img src="https://vitrio.space/assets/vitrio/marketplaces/ozon.webp" alt="Ozon" width="280" height="61" loading="lazy">
+        <img src="https://vitrio.space/assets/vitrio/marketplaces/yandex-market.webp" alt="Яндекс Маркет" width="280" height="43" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ПОЧЕМУ ИМЕННО VITRIO ======================= -->
+  <section class="section why" id="why">
+    <div class="shell">
+      <h2 class="section__title">Почему именно<br><span class="lime">VITRIO?</span></h2>
+
+      <div class="why__grid">
+        <article class="why__card">
+          <div class="why__head">
+            <span class="why__num">1</span>
+            <h3>Забудь о найме фотографа</h3>
+          </div>
+          <p>Не трать деньги на фотосессию своего товара, просто загрузи его и создай то, что всегда хотел!</p>
+        </article>
+
+        <article class="why__card">
+          <div class="why__head">
+            <span class="why__num">2</span>
+            <h3>Вся работа в одном месте</h3>
+          </div>
+          <p>Создавайте и редактируйте изображения в одном месте, просто удобно и не требует ничего лишнего!</p>
+        </article>
+
+        <article class="why__card">
+          <div class="why__head">
+            <span class="why__num">3</span>
+            <h3>Готово к публикации</h3>
+          </div>
+          <p>Все фотографии готовы к публикации, наша ИИ генерирует всё строго по правилам</p>
+        </article>
+
+        <article class="why__card">
+          <div class="why__head">
+            <span class="why__num">4</span>
+            <h3>Это просто и надежно</h3>
+          </div>
+          <p>Сервис работает очень просто, а главное уже завоевал доверие среди многих предпринимателей по всей стране</p>
+        </article>
+      </div>
+
+      <div class="why__cta">
+        <a class="btn btn--lime" data-cta href="https://vitrio.space/?ref=NF-367251-6731&amp;referral_offer=hybrid" target="_blank" rel="sponsored noopener">Попробуй 3 дня за 1 ₽</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Плеер подгружается только по клику: до этого ни одного
+       запроса на сторонний домен, и первый экран не тормозит. -->
+  <section class="section tutorial" id="tutorial">
+    <div class="shell">
+      <h2 class="section__title section__title--center">Как работать в Vitrio</h2>
+      <p class="section__lead">Короткий туториал — от загрузки фото до готового визуала.</p>
+
+      <div class="tutorial__box" data-embed="https://kinescope.io/embed/ptXt8i3foDfA9RFzfxUPYB?autoplay=1" data-embed-title="Туториал по работе в Vitrio">
+        <button class="tutorial__cover" type="button" aria-label="Воспроизвести туториал по работе в Vitrio">
+          <img src="https://vitrio.space/assets/vitrio/tutorial/tutorial-cover-04.webp" alt="Как создать карточку товара за 1 минуту — пошаговый обзор Vitrio" width="1536" height="864" loading="lazy">
+          <span class="tutorial__play" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ВОЗМОЖНОСТИ ============================ -->
+  <section class="section feat" id="feat">
+    <div class="shell">
+      <h2 class="section__title section__title--center">Не просто генерация. Рабочее пространство для товара.</h2>
+
+      <div class="feat__grid">
+        <article class="feat__card">
+          <span class="feat__icon"><svg viewBox="0 0 24 24"><path d="M3 8V5a2 2 0 012-2h3M16 3h3a2 2 0 012 2v3M21 16v3a2 2 0 01-2 2h-3M8 21H5a2 2 0 01-2-2v-3"/><circle cx="12" cy="12" r="3.2"/></svg></span>
+          <h3>Товар остаётся узнаваемым</h3>
+          <p>Vitrio учитывает форму, упаковку, цвет, фактуру и ключевые детали товара.</p>
+        </article>
+
+        <article class="feat__card">
+          <span class="feat__icon"><svg viewBox="0 0 24 24"><path d="M4 7a2 2 0 012-2h4l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M8 13h8"/></svg></span>
+          <h3>Проекты хранят всю историю</h3>
+          <p>Исходники, настройки и результаты остаются собраны в одном месте.</p>
+        </article>
+
+        <article class="feat__card">
+          <span class="feat__icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="8" height="16" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="6" rx="1.6"/></svg></span>
+          <h3>Форматы под площадку</h3>
+          <p>Один товар для карточки, баннера и вертикального контента.</p>
+        </article>
+
+        <article class="feat__card">
+          <span class="feat__icon"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 4.6 4.6 1.9-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9z"/><path d="M18 16l.9 2.1 2.1.9-2.1.9L18 22l-.9-2.1-2.1-.9 2.1-.9z"/></svg></span>
+          <h3>Автоматическая генерация</h3>
+          <p>Vitrio сам подбирает оптимальные параметры для сцены — без выбора модели.</p>
+        </article>
+
+        <article class="feat__card">
+          <span class="feat__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 12.4l2.4 2.4 4.6-5.2"/></svg></span>
+          <h3>Чистый результат</h3>
+          <p>Изображение без случайных цен, характеристик и рекламных надписей.</p>
+        </article>
+
+        <article class="feat__card">
+          <span class="feat__icon"><svg viewBox="0 0 24 24"><path d="M4 18.5V16l9.4-9.4a1.8 1.8 0 012.6 0l1.4 1.4a1.8 1.8 0 010 2.6L8 20H5.5A1.5 1.5 0 014 18.5z"/><path d="M12.5 7.5l4 4"/></svg></span>
+          <h3>Свободное пожелание</h3>
+          <p>Опишите материал, поверхность, свет и композицию своими словами.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ПРОМО-АКЦИЯ ============================ -->
+  <!-- — окно акции в минутах, отсчёт от загрузки страницы.
+       Альтернатива: data-deadline="2026-09-01T21:00:00+03:00" — фиксированная
+       дата; если она задана, окно игнорируется.
+       data-participants — впишите реальное число или оставьте пустым. -->
+  <section class="section promo" id="promo">
+    <div class="shell">
+      <div class="promo__card" data-participants="">
+        <div class="promo__copy">
+          <span class="promo__eyebrow">Акция</span>
+          <h2>Откройте свой Telegram-подарок</h2>
+          <p class="promo__text">Крутите рулетку в нашем мини-приложении и получайте бонусные генерации, скидку на подписку или расширенный доступ к Vitrio Pro.</p>
+
+          <p class="promo__stats" data-role="participants" hidden>
+            <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke="#11170a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="7.5" cy="6" r="3"/><path d="M1.5 17c0-3 2.7-5 6-5s6 2 6 5"/><path d="M14 3.4a3 3 0 010 5.2M15.5 12.3c2 .6 3.5 2.3 3.5 4.7"/>
+            </svg>
+            <span data-role="participants-text"></span>
+          </p>
+
+          <p class="promo__limited">
+            <svg width="17" height="17" viewBox="0 0 20 20" fill="none" stroke="#11170a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="10" cy="10" r="7.5"/><path d="M10 5.8V10l2.8 1.8"/>
+            </svg>
+            Предложение действует ограниченное время
+          </p>
+
+          <div class="promo__cta">
+            <a class="btn btn--dark" data-cta data-role="promo-cta" href="https://t.me/TgGiftsSpinBot" target="_blank" rel="noopener">Крутить рулетку</a>
+          </div>
+          <p class="promo__note">Количество подарков ограничено. Один розыгрыш на аккаунт.</p>
+        </div>
+
+        <div class="promo__art">
+          <img src="img/promo-case.png" alt="Подарочный кейс Vitrio с призами" width="372" height="386" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ ТАРИФЫ ============================ -->
+  <section class="section plans-section" id="plans">
+    <div class="shell">
+      <h2 class="section__title section__title--center">Выберите удобный тариф</h2>
+
+      <div class="plans">
+        <article class="plan">
+          <h3>Vitrio Start</h3>
+          <p class="plan__price">300 ₽<span>/неделю</span></p>
+          <p class="plan__desc">Для первых карточек, каталогов и регулярных быстрых итераций.</p>
+          <ul class="plan__list">
+            <li>до 16 Nano Banana 2</li>
+            <li>до 8 Nano Pro</li>
+            <li>Проекты для товаров</li>
+            <li>До четырёх ракурсов</li>
+            <li>Основные форматы и история</li>
+            <li>Скачивание готовых визуалов</li>
+          </ul>
+          <a class="btn btn--ghost btn--sm" data-cta href="https://vitrio.space/?ref=NF-367251-6731&amp;referral_offer=hybrid" target="_blank" rel="sponsored noopener">Попробуй 3 дня за 1 ₽</a>
+        </article>
+
+        <article class="plan plan--pro">
+          <h3>Vitrio Pro</h3>
+          <p class="plan__price">1000 ₽<span>/неделю</span></p>
+          <p class="plan__desc">Для продавцов, которым нужны сложные коммерческие сцены и больше контроля.</p>
+          <ul class="plan__list">
+            <li>до 60 Nano Banana 2</li>
+            <li>до 30 Nano Pro</li>
+            <li>Всё из Vitrio Start</li>
+            <li>Сложные коммерческие композиции</li>
+            <li>Максимальная детализация</li>
+            <li>Расширенные настройки сцены</li>
+          </ul>
+          <a class="btn btn--lime btn--sm" data-cta href="https://vitrio.space/?ref=NF-367251-6731&amp;referral_offer=hybrid" target="_blank" rel="sponsored noopener">Попробуй 3 дня за 1 ₽</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================ ТЕКСТ ДЛЯ ПОИСКА ============================ -->
+  <section class="section seo" id="about">
+    <div class="shell">
+      <h2 class="section__title section__title--center">Нейросеть для карточек товара: как это работает</h2>
+
+      <div class="seo__body">
+        <p>Карточка товара — единственное, что видит покупатель на маркетплейсе перед тем, как нажать «в корзину». Описание читает меньшинство, галерею листают почти все, поэтому от качества изображений напрямую зависит конверсия в заказ. Раньше, чтобы сделать карточку, продавцу приходилось выбирать между фотостудией, фрилансером и самостоятельной вознёй в редакторе — и каждый вариант упирался либо в деньги, либо во время. Сегодня появился четвёртый путь.</p>
+
+        <h3>Что делает нейросеть для создания карточек товара</h3>
+        <p>Принцип простой: вы загружаете обычное фото товара, снятое хоть на телефон, а нейросеть достраивает вокруг него всё остальное. Она убирает фон, подставляет подходящее окружение, выставляет свет и собирает изображение под требования площадки. Создать карточку товара с помощью нейросети получается за минуты, без навыков дизайна и без съёмочного оборудования.</p>
+        <p>Важно, чем такой сервис отличается от универсальных генераторов вроде Midjourney. Те рисуют картинку с нуля по описанию и вашего товара никогда не видели — они нарисуют похожий предмет, но не ваш. Нейросеть для карточек товара отталкивается именно от вашей фотографии и сохраняет форму, упаковку, цвет и фактуру. Для маркетплейса это принципиально: покупатель должен получить то, что видел в галерее.</p>
+
+        <h3>Как создать карточку товара: пошагово</h3>
+        <p>Порядок действий одинаков для всех площадок. Ниже — как сделать карточку товара для маркетплейса от съёмки до выгрузки в личный кабинет.</p>
+        <ul class="seo__list">
+          <li>Снимите товар при дневном свете на однотонном фоне, сделайте несколько ракурсов</li>
+          <li>Загрузите кадры в сервис и выберите формат — карточка, баннер или вертикальный контент</li>
+          <li>Опишите словами, какую сцену хотите: материал, поверхность, освещение</li>
+          <li>Проверьте результат глазами: цвет товара и цифры на инфографике должны совпадать с реальностью</li>
+          <li>Выгрузите изображения и загрузите в личный кабинет площадки</li>
+        </ul>
+
+        <h3>Как создавать карточки на ВБ</h3>
+        <p>Механика для Вайлдберриз ничем не отличается: сгенерированные изображения загружаются в карточку через личный кабинет продавца так же, как обычные фотографии. Отличаются только требования к самим файлам — соотношение сторон, минимальное разрешение, вес и допустимое количество изображений. ВБ их периодически меняет, поэтому перед загрузкой сверяйтесь с актуальной справкой площадки: это единственный надёжный источник.</p>
+        <p>Многие продавцы ведут ассортимент сразу на нескольких площадках и ищут, как создавать карточки ВБ и Озон одновременно. Здесь у генерации есть заметное преимущество перед студией: один загруженный товар используется для карточки, баннера и вертикального контента, а форматы готовятся под конкретную площадку.</p>
+
+        <h3>Карточки для Озон и Яндекс Маркета</h3>
+        <p>Для Озон и Яндекс Маркета всё устроено аналогично. Разница снова в технических требованиях к файлам и в том, какие блоки инфографики привычны покупателю конкретной площадки. Сам процесс — загрузили фото, получили набор изображений, выгрузили — одинаков везде.</p>
+
+        <h3>Нейросеть для инфографики карточки товара</h3>
+        <p>Инфографика — это изображения в галерее, на которые поверх фото нанесены текст, иконки, размеры и сценарии использования. Именно она отвечает на вопросы покупателя раньше, чем он успеет их задать и уйти к конкуренту. Отдельная инфографика для каждой позиции — самая утомительная часть работы: макет один и тот же, меняются только фото и цифры.</p>
+        <p>Эту рутину генерация снимает целиком. Но текст на макете всё равно проверяйте вручную: состав, размеры и характеристики должны совпадать с тем, что указано в карточке. Расхождение ведёт к возвратам и вопросам от площадки.</p>
+
+        <h3>Можно ли сделать карточку товара нейросетью бесплатно</h3>
+        <p>Запрос «нейросеть для карточек товара бесплатно» — один из самых частых, и ответ на него честный, но не самый приятный. Полностью бесплатные инструменты существуют, но у них либо жёсткие лимиты на число генераций, либо водяные знаки, либо низкое разрешение на выходе — для реальной работы с ассортиментом этого не хватает.</p>
+        <p>У Vitrio бесплатного тарифа нет. Есть пробный период: первые 3 дня стоят 1 ₽, дальше подписка от 300 ₽ в неделю без ограничения по числу товаров. Логика в том, что за рубль можно прогнать свои реальные позиции и понять, ложится ли формат на вашу категорию, до того как платить полную цену.</p>
+
+        <h3>Как зарабатывать, создавая карточки на ВБ</h3>
+        <p>Заработок на карточках товара — отдельная история: их делают не себе, а на заказ. Спрос на это устойчивый: у большинства мелких продавцов нет ни дизайнера, ни времени. Раньше порогом входа был Photoshop и месяцы практики, сейчас — умение снять товар и собрать вменяемый макет.</p>
+        <p>Экономика тут строится на скорости: заказчик платит за карточку, а ваши затраты — это подписка, не зависящая от их количества. Чем больше позиций вы прогоняете за месяц, тем ниже себестоимость одной. Именно поэтому сервисы с подпиской выгоднее фрилансеру, чем поштучная оплата инструментов.</p>
+
+        <h3>Чего нейросеть не сделает</h3>
+        <ul class="seo__list">
+          <li>Мелкие надписи и логотипы на упаковке часто искажаются — проверяйте</li>
+          <li>Сложная фактура: кружево, мех, прозрачное стекло, металл с бликами</li>
+          <li>Точное попадание в оттенок — цвет смещается чаще всего, сверяйте с товаром в руках</li>
+          <li>Строгий фирменный гайдлайн бренда — тут по-прежнему нужен дизайнер</li>
+        </ul>
+        <p>Для премиальных и имиджевых позиций классическая съёмка всё ещё даёт более достоверный результат. На практике чаще всего комбинируют: главное фото снимают сами или в студии, а инфографику, баннеры и дополнительные ракурсы собирают генерацией.</p>
+
+        <h3>Если вы искали другое</h3>
+        <p>Словом «карточка товара» называют две разные вещи. Здесь речь про изображения для витрины маркетплейса. Если вам нужно завести карточку товара в Честном Знаке, Национальном каталоге или в 1С — это про маркировку и учёт, инструкции ищите в справке соответствующей системы, наш сервис такую задачу не решает.</p>
+      </div>
+
+      <div class="faq">
+        <details class="faq-item" open>
+          <summary>Сколько стоит создать карточку товара в Vitrio?</summary>
+          <div class="answer"><p>Первые 3 дня доступ стоит 1 ₽. Дальше действует подписка: тариф Vitrio Start — 300 ₽ в неделю, Vitrio Pro — 1000 ₽ в неделю. Стоимость привязана к периоду подписки, а не к количеству товаров.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Нужен ли профессиональный фотоаппарат?</summary>
+          <div class="answer"><p>Нет. Достаточно фото с телефона, снятого при нормальном освещении и на спокойном фоне. Чем чище исходный кадр, тем лучше результат — снимайте днём у окна и без пёстрого фона позади товара.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Подходит ли сервис для Wildberries, Ozon и Яндекс Маркета?</summary>
+          <div class="answer"><p>Да, механика создания карточки одинакова для всех площадок, а форматы готовятся под конкретную площадку. Требования к самим файлам у маркетплейсов отличаются и периодически обновляются, поэтому перед загрузкой стоит сверяться с их актуальной справкой.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Есть ли бесплатная нейросеть для создания карточек товара?</summary>
+          <div class="answer"><p>Полностью бесплатные инструменты существуют, но у них жёсткие лимиты на число генераций, водяные знаки или низкое разрешение — для работы с реальным ассортиментом этого не хватает. У Vitrio бесплатного тарифа нет: первые 3 дня стоят 1 ₽, дальше подписка от 300 ₽ в неделю.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Как создавать карточки на ВБ через нейросеть?</summary>
+          <div class="answer"><p>Так же, как обычные фотографии: сгенерированные изображения загружаются в карточку через личный кабинет продавца. Отличаются только требования к файлам — соотношение сторон, разрешение, вес и количество изображений. ВБ их периодически меняет, сверяйтесь с актуальной справкой площадки.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Можно ли зарабатывать, создавая карточки товара на заказ?</summary>
+          <div class="answer"><p>Да, спрос устойчивый: у большинства мелких продавцов нет ни дизайнера, ни времени. Экономика строится на скорости — заказчик платит за карточку, а ваши затраты это подписка, не зависящая от их количества. Чем больше позиций прогоняете за месяц, тем ниже себестоимость одной.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Останется ли товар похожим на настоящий?</summary>
+          <div class="answer"><p>Vitrio отталкивается от вашей фотографии и учитывает форму, упаковку, цвет и фактуру товара — в отличие от универсальных генераторов, которые рисуют похожий предмет с нуля. Итоговое изображение всё равно стоит просмотреть глазами: соответствие картинки реальному товару — требование всех площадок.</p></div>
+        </details>
+        <details class="faq-item">
+          <summary>Можно ли сделать инфографику, а не только фото?</summary>
+          <div class="answer"><p>Да. Кроме фотографий товара сервис собирает баннеры и инфографику, а один загруженный товар можно использовать сразу для карточки, баннера и вертикального контента.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ ПОДВАЛ ============================ -->
+<footer class="footer">
+  <div class="shell footer__grid">
+    <div>
+      <a class="logo" href="#top" aria-label="Vitrio">
+        <span class="logo__img"><img src="img/logo.webp" alt="Vitrio" width="260" height="77" loading="lazy"><img src="img/logo.webp" alt="" aria-hidden="true" width="260" height="77" loading="lazy"></span>
+      </a>
+      <p class="footer__about">Обзорный сайт о создании карточек товара для маркетплейсов. Рассказываем, как собрать фото и инфографику для ВБ, Озон и Яндекс Маркета, и рекомендуем сервис Vitrio.<br>Сайт не является официальным сайтом Vitrio. © 2026 Прилавок</p>
+    </div>
+
+    <div>
+      <h4>Vitrio</h4>
+      <ul>
+        <li><a href="#feat">Возможности</a></li>
+        <li><a href="#tutorial">Туториал</a></li>
+        <li><a href="#plans">Тарифы</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Документы и поддержка</h4>
+      <ul>
+        <li><a href="https://vitrio.space/?ref=NF-367251-6731&amp;referral_offer=hybrid" target="_blank" rel="sponsored noopener">Войти</a></li>
+        <li><a href="https://studio.vitrio.space/support" rel="nofollow noopener" target="_blank">Поддержка</a></li>
+        <li><a href="https://vitrio.space/offer" rel="nofollow noopener" target="_blank">Публичная оферта и возвраты</a></li>
+        <li><a href="https://vitrio.space/agreement" rel="nofollow noopener" target="_blank">Пользовательское соглашение</a></li>
+        <li><a href="https://vitrio.space/privacy" rel="nofollow noopener" target="_blank">Политика данных</a></li>
+        <li><a href="https://vitrio.space/subscription-terms" rel="nofollow noopener" target="_blank">Условия подписки</a></li>
+        <li><a href="mailto:support@vitrio.space">support@vitrio.space</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Сколько стоит создать карточку товара в Vitrio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Первые 3 дня доступ стоит 1 рубль. Дальше подписка: Vitrio Start — 300 рублей в неделю, Vitrio Pro — 1000 рублей в неделю. Стоимость привязана к периоду подписки, а не к количеству товаров."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужен ли профессиональный фотоаппарат?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Достаточно фото с телефона при нормальном освещении и на спокойном фоне. Чем чище исходный кадр, тем лучше результат."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Подходит ли сервис для Wildberries, Ozon и Яндекс Маркета?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, механика создания карточки одинакова для всех площадок, а форматы готовятся под конкретную площадку. Требования к файлам у маркетплейсов отличаются и обновляются, поэтому перед загрузкой стоит сверяться с их справкой."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Есть ли бесплатная нейросеть для создания карточек товара?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Полностью бесплатные инструменты существуют, но у них жёсткие лимиты на число генераций, водяные знаки или низкое разрешение. У Vitrio бесплатного тарифа нет: первые 3 дня стоят 1 рубль, дальше подписка от 300 рублей в неделю."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как создавать карточки на ВБ через нейросеть?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Сгенерированные изображения загружаются в карточку через личный кабинет продавца так же, как обычные фотографии. Отличаются требования к файлам — соотношение сторон, разрешение, вес и количество изображений."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли зарабатывать, создавая карточки товара на заказ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Заказчик платит за карточку, а затраты исполнителя это подписка, не зависящая от их количества. Чем больше позиций обрабатывается за месяц, тем ниже себестоимость одной карточки."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Останется ли товар похожим на настоящий?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vitrio отталкивается от вашей фотографии и учитывает форму, упаковку, цвет и фактуру товара. Итоговое изображение стоит просмотреть глазами: соответствие картинки реальному товару — требование всех площадок."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли сделать инфографику, а не только фото?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Кроме фотографий сервис собирает баннеры и инфографику, а один загруженный товар можно использовать для карточки, баннера и вертикального контента."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
