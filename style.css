@@ -140,11 +140,10 @@ p{margin:0;}
    оно пропадает. Кладём две копии файла друг на друга и режем по
    границе знака и слова (42.88% ширины, там чистый зазор 11px):
    знак показываем как есть, слово перекрашиваем в белый. */
-.logo{display:flex;align-items:center;flex:none;}
-.logo__img{position:relative;display:block;height:28px;aspect-ratio:260/77;}
-.logo__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;}
-.logo__img img:first-child{clip-path:inset(0 57.12% 0 0);}
-.logo__img img:last-child{clip-path:inset(0 0 0 42.88%);filter:brightness(0) invert(1);}
+.logo{display:flex;align-items:center;gap:9px;flex:none;text-decoration:none;}
+.logo__mark{display:block;width:28px;height:28px;flex:none;}
+.logo__mark svg{display:block;width:100%;height:100%;}
+.logo__text{font-weight:800;font-size:19px;letter-spacing:-.02em;color:var(--text);white-space:nowrap;}
 .nav__links{flex:1;display:flex;justify-content:center;gap:46px;}
 .nav__links a{font-size:16px;color:var(--muted);transition:color .18s var(--ease);}
 .nav__links a:hover{color:var(--text);}
@@ -622,7 +621,8 @@ p{margin:0;}
   body{font-size:16px;}
   .nav__bar{padding:9px 9px 9px 16px;}
   .logo__plate{padding:6px 12px;}
-  .logo img{height:22px;}
+  .logo__mark{width:24px;height:24px;}
+  .logo__text{font-size:17px;}
   .nav__caption{padding-left:18px;font-size:9.5px;}
   .nav__cta{padding:11px 16px;font-size:13px;}
   .hero{padding:42px 0 58px;}
