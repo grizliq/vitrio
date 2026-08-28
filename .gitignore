@@ -3,3 +3,4 @@ desktop.ini
 .DS_Store
 *.tmp
 _*.py
+_*.html
