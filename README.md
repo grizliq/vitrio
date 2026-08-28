@@ -213,7 +213,7 @@ Manrope грузится.
 
 ## Публикация (добавлено 26.08.2026)
 
-**Домен:** `vitrio.website` (оплачен до 08.2027). Брендовый — сайт ведётся как
+**Домен:** `vitrio.pro` (оплачен до 08.2027). Брендовый — сайт ведётся как
 собственный ресурс Vitrio: логотип Vitrio в шапке и подвале, «© 2026 Vitrio».
 
 Риск, о котором стоит помнить: страница повторяет блоки vitrio.space (возможности,
@@ -225,7 +225,7 @@ Manrope грузится.
 
 **Файлы для GitHub Pages:** `CNAME`, `.nojekyll`, `robots.txt`, `sitemap.xml`.
 
-**DNS для vitrio.website** — apex A-записи:
+**DNS для vitrio.pro** — apex A-записи:
 ```
 185.199.108.153
 185.199.109.153
@@ -244,5 +244,5 @@ Manrope грузится.
 
 **Смена домена:**
 ```bash
-sed -i 's|vitrio.website|НОВЫЙ.ru|g' index.html robots.txt sitemap.xml CNAME
+sed -i 's|vitrio.pro|НОВЫЙ.ru|g' index.html robots.txt sitemap.xml CNAME
 ```
